@@ -1,0 +1,33 @@
+﻿
+@model List<OutletVM>
+@{
+    ViewData["Title"] = "Outlets List";
+}
+<header>
+     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <button ><a class="nav-link text-dark" asp-area="" asp-controller="Outlets" asp-action="AddOutlet">Add Outlet</a></button>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<div class="row row-cols-1 row-cols-md-2">
+    @foreach (OutletVM outlet in Model)
+    {
+        string url = $"https://picsum.photos/seed/{DateTime.Now.Ticks}/286/180";
+        <div class="col mb-3">
+            <div class="card" style="width: 18rem;">
+                <img src="@url" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@outlet.Name</h5>
+                    <p class="card-text">Street Name: @outlet.StreetName <br /> Landmark:@outlet.Landmark <br/> Opens On:@outlet.OpeningDate.ToString("dd/MM/yyyy")<br/> </p>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+        </div>
+    }
+    
+</div>
+

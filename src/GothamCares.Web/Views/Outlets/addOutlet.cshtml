@@ -1,0 +1,53 @@
+@*
+*@
+@model GothamCares.Web.Models.OutletVM
+@{
+    ViewData["Title"] = "Add Outlet";
+}
+<div>
+    <h1>Add Outlet here..</h1>
+</div>
+
+<div class="row">
+    <div class="col-6">
+       
+            <form asp-action="AddOutlet">
+                
+              <div class="form-group">
+                <div class="col-4">
+                    <label asp-for="Name" for="input1">Outlet Name</label>
+                    <input asp-for="Name"  type="text" class="form-control" id="Outlet Name" >
+                </div>
+             </div>
+             <div class="form-group">
+                <div class="col-4">
+                    <label asp-for="StreetName" for="input1">Street Name</label>
+                    <input asp-for="StreetName"  type="text" class="form-control" id="Street Name" >
+                </div>
+             </div>
+             <div class="form-group">
+                <div class="col-4">
+                    <label asp-for="Landmark" for="input2">Landmark</label>
+                    <input asp-for="Landmark"  type="text" class="form-control" id="Landmark"  >
+                </div>
+             </div>
+             <div class="form-group">
+                <div class="col-4">
+                    <label asp-for="OpeningDate" for="input3">OpeningDate</label>
+                    <input asp-for="OpeningDate"   class="form-control" id="OpeningDate"  >
+                </div>
+             </div>
+            
+              <div class="col-auto my-1">
+                <button class="btn btn-primary" type="submit" OnClick = "return confirm('Are you sure you want to Add Outlet to the list?');">Submit</button>
+              </div>
+
+            
+
+            </form>
+
+    </div>
+
+
+</div>
+    
